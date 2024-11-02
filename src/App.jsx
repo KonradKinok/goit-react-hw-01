@@ -1,33 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import './index.css';
+import * as Title from './components/SpaceBetweenTasks/SpaceBetweenTasks.jsx';
+
+// Zadanie1
+import * as Zadanie1 from './components/Profile/Profile.jsx';
+import user from './components/Profile/user.json';
+// Zadanie2
+import * as Zadanie2 from './components/Statistics/Statistics.jsx';
+import data from './components/Statistics/data.json';
+// Zadanie3
+import * as Zadanie3 from './components/FriendList/FriendList.jsx';
+import friends from './components/FriendList/friends.json';
+// Zadanie4
+import * as Zadanie4 from './components/TransactionHistory/TransactionHistory.jsx';
+import transaction from './components/TransactionHistory/transactions.json';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React+Konrad</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Title.SpaceBetweenTasks message={'Zadanie 1:'} />
+      <Zadanie1.Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        followers={user.stats.followers}
+        views={user.stats.views}
+        likes={user.stats.likes}
+      />
+      <Title.SpaceBetweenTasks message={'Zadanie 2a:'} />
+      <Zadanie2.Statistics title="Upload stats" stats={data} />
+      <Title.SpaceBetweenTasks message={'Zadanie 2b:'} />
+      <Zadanie2.Statistics stats={data} />
+      <Title.SpaceBetweenTasks message={'Zadanie 3:'} />
+      <Zadanie3.FriendList friends={friends} />
+      <Title.SpaceBetweenTasks message={'Zadanie 4:'} />
+      <Zadanie4.TransactionHistory items={transaction} />
     </>
   )
 }
