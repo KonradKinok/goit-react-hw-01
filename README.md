@@ -3,8 +3,8 @@
 Link do repozytorium:
 https://github.com/KonradKinok/goit-react-hw-01
 
-Link do strony:
-https://konradkinok.github.io/goit-react-hw-01-components/
+Link do Vercel:
+https://goit-react-hw-01-dun-pi.vercel.app/
 
 # React + Vite
 
